@@ -115,6 +115,8 @@ def nodejs_image(
         data = [],
         layers = [],
         binary = None,
+        visibility = None,
+        tags = None,
         **kwargs):
     """Constructs a container image wrapping a nodejs_binary target.
 
@@ -145,9 +147,6 @@ def nodejs_image(
 
     all_layers = nodejs_layers + layers
 
-    visibility = kwargs.get("visibility", None)
-    tags = kwargs.get("tags", None)
-
     # TODO(mattmoor): Consider making the directory into which the app
     # is placed configurable.
     base = base or DEFAULT_BASE
@@ -165,7 +164,6 @@ def nodejs_image(
         binary = binary,
         visibility = visibility,
         tags = tags,
-        args = kwargs.get("args"),
         data = data,
-        testonly = kwargs.get("testonly"),
+        **kwargs
     )
