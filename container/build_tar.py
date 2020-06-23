@@ -48,7 +48,7 @@ gflags.DEFINE_string(
         ' usable with non *nix OSes.')
 
 gflags.DEFINE_bool(
-    'enable_mtime_preservation', False, 'Preserve file mtimes from input tar file.')
+    'enable_mtime_preservation', False, 'Preserve file mtimes from input tar or files.')
 
 gflags.DEFINE_multistring(
     'empty_root_dir',
